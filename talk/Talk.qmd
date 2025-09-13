@@ -1,7 +1,54 @@
 ---
 title: "Talk"
+author: Nick Giangreco, PhD
+format: 
+  revealjs:
+    incremental: true
 ---
 
-## Quarto
+# Who am I?
+- Nick Giangreco, PhD in Systems Biology  
+- Data Scientist at Regeneron (Precision Medicine)  
+- From academic research → industry impact  
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+# What are we talking about?
+- Life as a data scientist in healthcare  
+- Lessons from my PhD that still matter  
+- How to get the most out of being a student  
+- Why AI is a tool, not a threat  
+
+# What to take away
+- Data science = **impact through clarity**  
+- PhD/grad school = **training for resilience**  
+- AI = **amplifier of your skills**  
+
+# Doing Data Science in Healthcare
+- Problems are messy, urgent, and matter to patients  
+- Example: integrating biomarker + clinical data for drug decisions  
+- Success = code + communication + collaboration  
+
+# Lessons from a PhD
+- Ask sharp questions, not just clever ones  
+- Stay resilient through setbacks  
+- Learn how to learn fast  
+- These skills transfer directly to industry  
+
+# My Journey (stories here)
+- Systems biology mindset → connecting messy data in pharma  
+- Long projects in grad school → patience for clinical timelines  
+- Collaborations in research → cross-functional teamwork in industry  
+
+# Making the Most of Being a Student
+- Time to explore broadly before narrowing focus  
+- Build technical foundations now; specialization comes later  
+- Relationships you form = future opportunities  
+
+# Don’t Fear AI
+- Use it to draft, code, summarize, ideate  
+- Still need humans for framing + judgment  
+- Those who embrace it wisely gain an edge  
+
+# Closing
+- PhD/student years: practice resilience, curiosity, adaptability  
+- Industry: same skills, applied to higher stakes  
+- Final message: use your student time to build skills + mindset for impact
