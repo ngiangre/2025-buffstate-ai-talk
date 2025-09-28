@@ -1,5 +1,5 @@
 ---
-title: "Notes from a data scientist in Pharma, and a former PhD student"
+title: "Notes from a data scientist in Pharma, and a former graduate student"
 author: Nick Giangreco, PhD
 format: 
   revealjs:
@@ -15,30 +15,31 @@ format:
 
 # Prelude
 - My recovery from a brain injury taught me resilience 
-- My resilience helped me excel in my PhD
+- My resilience helped me excel in graduate school
 - Be constructively critical of yourself - but know that you personally are amazing 
 
 # What are we talking about today?
 - Doing data science at a company
-- Lessons from my PhD that still matter  
+- Lessons from my graduate experience
 - How to get the most out of being a student  
 - Why you should harness AI as a tool
 
 # What to take away
 - Data science = **impact through clarity**  
-- PhD/grad school = **training for resilience**  
+- PhD/graduate school = **training for resilience**  
 - AI = **Boost your productivity**  
 
 # Doing Data Science at a Company
 - At a company, you have deliverables, priorities, limited resources, and timelines
-- Communicate the impact of your work - get used to making slides for your stakeholders
+- Communicate the impact of your work - get used to making slides for stakeholders
 - Success = code + communication + collaboration  
 
-# Lessons from a PhD
+# Lessons from a graduate student
 - Do internships
 - Take advantage of being a student
    - Network!
    - Learn as much as you can!
+   - Experience matters
 - Invest in your career
    - Go to conferences
    - Identify your domain
@@ -46,11 +47,11 @@ format:
 
 # Companies WANT you to leverage AI
 - Use it to draft, code, summarize, ideate  
-- Think of LLMs as assistants for increasing your prodductivity
+- Think of LLMs as assistants for increasing your productivity
 - You are always needed to evaluate outputs
 - Only use it when you know what you want
 
 # Closing
-- PhD/student years: practice resilience, curiosity, adaptability  
+- Student years: practice resilience, curiosity, communication, and NETWORKING!
 - Industry: focus on communication and impact
 - Final message: use your student time to build skills + mindset for impact
