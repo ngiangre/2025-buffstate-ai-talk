@@ -32,6 +32,7 @@ format:
 # Doing Data Science at a Company
 - At a company, you have deliverables, priorities, limited resources, and timelines
 - Communicate the impact of your work - get used to making slides for stakeholders
+- Ensure your data science/analytics is interpretable!
 - Success = code + communication + collaboration  
 
 # Lessons from a graduate student
