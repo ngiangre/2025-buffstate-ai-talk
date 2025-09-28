@@ -47,7 +47,5 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
-
-talk/.quarto
-talk/Talk_files
-talk/Talk.html
+/.quarto/
+**/*.quarto_ipynb
