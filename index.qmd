@@ -1,5 +1,5 @@
 ---
-title: "Talk"
+title: "Notes from a data scientist in Pharma, and a former PhD student"
 author: Nick Giangreco, PhD
 format: 
   revealjs:
@@ -7,48 +7,50 @@ format:
 ---
 
 # Who am I?
-- Nick Giangreco, PhD in Systems Biology  
-- Data Scientist at Regeneron (Precision Medicine)  
-- From academic research → industry impact  
+- Nick Giangreco, PhD in Systems Biology @ Columbia
+- Studied Biochemistry at University of Rochester
+- Learned data science at the NIH and Columbia
+- Currently a Data Scientist at Regeneron (Precision Medicine)  
+   - I build data products to analyze biomarker data and streamline operations 
 
-# What are we talking about?
-- Life as a data scientist in healthcare  
+# Prelude
+- My recovery from a brain injury taught me resilience 
+- My resilience helped me excel in my PhD
+- Be constructively critical of yourself - but know that you personally are amazing 
+
+# What are we talking about today?
+- Doing data science at a company
 - Lessons from my PhD that still matter  
 - How to get the most out of being a student  
-- Why AI is a tool, not a threat  
+- Why you should harness AI as a tool
 
 # What to take away
 - Data science = **impact through clarity**  
 - PhD/grad school = **training for resilience**  
-- AI = **amplifier of your skills**  
+- AI = **Boost your productivity**  
 
-# Doing Data Science in Healthcare
-- Problems are messy, urgent, and matter to patients  
-- Example: integrating biomarker + clinical data for drug decisions  
+# Doing Data Science at a Company
+- At a company, you have deliverables, priorities, limited resources, and timelines
+- Communicate the impact of your work - get used to making slides for your stakeholders
 - Success = code + communication + collaboration  
 
 # Lessons from a PhD
-- Ask sharp questions, not just clever ones  
-- Stay resilient through setbacks  
-- Learn how to learn fast  
-- These skills transfer directly to industry  
+- Do internships
+- Take advantage of being a student
+   - Network!
+   - Learn as much as you can!
+- Invest in your career
+   - Go to conferences
+   - Identify your domain
+   - Learn what energizes you  
 
-# My Journey (stories here)
-- Systems biology mindset → connecting messy data in pharma  
-- Long projects in grad school → patience for clinical timelines  
-- Collaborations in research → cross-functional teamwork in industry  
-
-# Making the Most of Being a Student
-- Time to explore broadly before narrowing focus  
-- Build technical foundations now; specialization comes later  
-- Relationships you form = future opportunities  
-
-# Don’t Fear AI
+# Companies WANT you to leverage AI
 - Use it to draft, code, summarize, ideate  
-- Still need humans for framing + judgment  
-- Those who embrace it wisely gain an edge  
+- Think of LLMs as assistants for increasing your prodductivity
+- You are always needed to evaluate outputs
+- Only use it when you know what you want
 
 # Closing
 - PhD/student years: practice resilience, curiosity, adaptability  
-- Industry: same skills, applied to higher stakes  
+- Industry: focus on communication and impact
 - Final message: use your student time to build skills + mindset for impact
