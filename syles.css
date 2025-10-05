@@ -1,0 +1,7 @@
+/* Increase internal padding so Mermaid expands the node box */
+.mermaid .mermaid-js {
+  padding: 10px 30px !important; /* top/bottom, left/right */
+  min-width: 200px !important;              /* ensures width doesn’t shrink */
+  min-height: 60px;              /* ensures height doesn’t shrink */
+  text-align: center;            /* optional */
+}

@@ -1,17 +1,44 @@
 ---
-title: "Notes from a data scientist in Pharma, and a former graduate student"
+title: "Building Data Products for Precision Medicine: Insights from Industry"
 author: Nick Giangreco, PhD
 format: 
   revealjs:
     incremental: true
+    mermaid:
+      theme: default
+    css: styles.css
+mermaid-format: svg
 ---
 
 # Who am I?
-- Nick Giangreco, PhD in Systems Biology @ Columbia
-- Studied Biochemistry at University of Rochester
-- Learned data science at the NIH and Columbia
-- Currently a Data Scientist at Regeneron (Precision Medicine)  
-   - I build data products to analyze biomarker data and streamline operations 
+
+
+```{mermaid}
+
+flowchart LR
+  HS(High School)-->College(Biochemistry)
+  College-->Postbac(NIH)
+  Postbac-->PhD(Columbia University)
+  PhD-->Job(Regeneron Parmaceuticals)
+  
+```
+
+# Where have I been?
+```{mermaid}
+
+flowchart LR
+  A(Buffalo)-->B(Rochester)
+  B-->C(Bethesda)
+  C-->D(NYC)
+  D-->A
+  
+```
+
+# What's my background?
+
+- Biology background
+- Self-taught programmer
+- Engineer for Precision Medicine
 
 # Prelude
 - My recovery from a brain injury taught me resilience 
