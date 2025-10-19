@@ -62,7 +62,7 @@ graph BT
 
 ![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2lvZXVxbHZ1aHE1YXhuNHMyaHA3ZWYxOTlqdGxlOTE4eHJuNjZlMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7btQT3dWrTI7pFZK/giphy.gif){fig-align="center"}
 
-## Insight #1: Keeping track of your work can be **more important** than completing assigned work
+## Insight #1: Making your work *transparent* can be **more important** than completing assigned work
 
 -   You (and your team) are assigned work including dozens of projects
 
