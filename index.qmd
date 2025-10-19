@@ -3,6 +3,7 @@ title: "Building Data Products for Precision Medicine: Insights from Industry"
 author: Nick Giangreco, PhD
 format: 
   revealjs:
+    slide-number: true
     incremental: true
     mermaid:
       theme: default
@@ -10,76 +11,117 @@ format:
 mermaid-format: svg
 ---
 
-# Who am I?
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNndhN3BwNmc0aXBtZmNnZTR0bjlqcTV3bDFkbnF4OWxpNmd0aXQ0biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fnuSiwXMTV3zmYDf6k/giphy.gif){fig-align="center"}
 
+## Hi, I'm Nick 👋
 
-```{mermaid}
+::::: columns
+::: {.nonincremental .column width="60%"}
+-   Biochemistry background
+-   Self-taught bioinformatician
+-   Research scientist in biomedical data science
+-   Returned to Buffalo during COVID
+-   (Remote) Engineer for Precision Medicine
+    -   'Science to Medicines' mission
+    -   Not a tech organization
+:::
 
-flowchart LR
-  HS(High School)-->College(Biochemistry)
-  College-->Postbac(NIH)
-  Postbac-->PhD(Columbia University)
-  PhD-->Job(Regeneron Parmaceuticals)
+::: {.column width="40%"}
+```{r}
+
+DiagrammeR::mermaid(diagram = '
+graph BT
+  HS(High School)-->College("Biochemistry
+                             @ University of Rochester")
+  College-->Postbac("Bioinformatics
+                     @ NIH")
+  Postbac-->PhD("Systems Biology
+                 @ Columbia University")
+  PhD-->Job("Precision Medicine
+             @ Regeneron")
+')
   
 ```
+:::
+:::::
 
-# Where have I been?
-```{mermaid}
+## This presentation is my perspective doing data science in industry
 
-flowchart LR
-  A(Buffalo)-->B(Rochester)
-  B-->C(Bethesda)
-  C-->D(NYC)
-  D-->A
-  
+-   I really liked academia and doing biomedical data science research
+
+    -   I was pretty OK at it too: \~ 12 papers with 6 as first author
+    -   No LLMs at that time!
+
+-   No one told me the difference between academic vs. industry work
+
+-   There's some key lessons and insights that I wish I knew beforehand
+
+-   I'd like to share **insights/tips** as an early-career data scientist
+
+## This is an N=1, results may vary, perspectives are my own
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2lvZXVxbHZ1aHE1YXhuNHMyaHA3ZWYxOTlqdGxlOTE4eHJuNjZlMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7btQT3dWrTI7pFZK/giphy.gif){fig-align="center"}
+
+## Insight #1: Keeping track of your work can be **more important** than completing assigned work
+
+-   You (and your team) are assigned work including dozens of projects
+
+-   There are stakeholders who are consumers and producers of your work
+
+-   Senior Leadership (SL) need to be consulted/informed for prioritization.
+
+-   Managers/Directors are accountable to SL
+
+-   If you do a lot of work and they don't see progress being made or timelines being met, can SL be told that it happened?
+
+# 
+
+Give management your book of work with summaries so that the corporate machine keeps running
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXp1Znd3Z2ZkYmZrczVncWhrbGhiamNta2dkeHcxOGU4azU3anBxcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Ui3OlvcLJk4LiMZNQ4/giphy.gif){fig-align="center"}
+
+## Lesson #2: Let your collaborators/stakeholders explore the data
+
+```{r}
+#| echo: false
+#| eval: false
+library(crosstalk)
+library(leaflet)
+library(DT)
+
+# Wrap data frame in SharedData
+sd <- SharedData$new(palmerpenguins::penguins)
+
 ```
-
-# What's my background?
-
-- Biology background
-- Self-taught programmer
-- Engineer for Precision Medicine
-
-# Prelude
-- My recovery from a brain injury taught me resilience 
-- My resilience helped me excel in graduate school
-- Be constructively critical of yourself - but know that you personally are amazing 
-
-# What are we talking about today?
-- Doing data science at a company
-- Lessons from my graduate experience
-- How to get the most out of being a student  
-- Why you should harness AI as a tool
-
-# What to take away
-- Data science = **impact through clarity**  
-- PhD/graduate school = **training for resilience**  
-- AI = **Boost your productivity**  
 
 # Doing Data Science at a Company
-- At a company, you have deliverables, priorities, limited resources, and timelines
-- Communicate the impact of your work - get used to making slides for stakeholders
-- Ensure your data science/analytics is interpretable!
-- Success = code + communication + collaboration  
+
+-   At a company, you have deliverables, priorities, limited resources, and timelines
+-   Communicate the impact of your work - get used to making slides for stakeholders
+-   Ensure your data science/analytics is interpretable!
+-   Success = code + communication + collaboration
 
 # Lessons from a graduate student
-- Do internships
-- Take advantage of being a student
-   - Network!
-   - Learn as much as you can!
-   - Experience matters
-- Invest in your career
-   - Go to conferences
-   - Identify your domain
-   - Learn what energizes you  
+
+-   Do internships
+-   Take advantage of being a student
+    -   Network!
+    -   Learn as much as you can!
+    -   Experience matters
+-   Invest in your career
+    -   Go to conferences
+    -   Identify your domain
+    -   Learn what energizes you
 
 # Companies WANT you to leverage AI
-- Use it to draft, code, summarize, ideate  
-- Think of LLMs as assistants for increasing your productivity
-- You are always needed to evaluate outputs
-- Only use it when you know what you want
+
+-   Use it to draft, code, summarize, ideate\
+-   Think of LLMs as assistants for increasing your productivity
+-   You are always needed to evaluate outputs
+-   Only use it when you know what you want
 
 # Closing
-- Student years: practice resilience, curiosity, communication, and NETWORKING!
-- Industry: focus on communication and impact
-- Final message: use your student time to build skills + mindset for impact
+
+-   Student years: practice resilience, curiosity, communication, and NETWORKING!
+-   Industry: focus on communication and impact
+-   Final message: use your student time to build skills + mindset for impact
