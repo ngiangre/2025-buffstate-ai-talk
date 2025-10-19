@@ -72,7 +72,7 @@ graph BT
 
 -   Managers/Directors are accountable to SL
 
--   If Managers/Directors can't communicate your work to SL, did you do work?
+-   If Managers/Directors can't communicate your work, how will SL know?
 
 # 
 
