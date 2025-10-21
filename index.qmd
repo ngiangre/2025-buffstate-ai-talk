@@ -74,7 +74,7 @@ graph BT
 
 -   If Managers/Directors can't communicate your work, how will SL know?
 
-# 
+##
 
 Give management your book of work with summaries so that the corporate machine keeps running
 
@@ -82,17 +82,27 @@ Give management your book of work with summaries so that the corporate machine k
 
 ## Tip 2 of 4: Let your collaborators/stakeholders explore the data
 
+##
+
 ```{r}
-#| echo: false
-#| eval: false
 library(crosstalk)
 library(leaflet)
 library(DT)
 
 # Wrap data frame in SharedData
-sd <- SharedData$new(palmerpenguins::penguins)
+sd <- SharedData$new(quakes[sample(nrow(quakes), 100),])
 
+# Create a filter input
+filter_slider("mag", "Magnitude", sd, column=~mag, step=0.1, width=250)
+
+# Use SharedData like a dataframe with Crosstalk-enabled widgets
+bscols(
+  leaflet(sd) |> addTiles() |> addMarkers(),
+  datatable(sd, extensions="Scroller", style="bootstrap", class="compact", width="100%",
+    options=list(deferRender=TRUE, scrollY=300, scroller=TRUE))
+)
 ```
+
 
 ## Tip 3 of 4 Always compare results of your complex models to simple, known, and understood models
 
@@ -103,7 +113,7 @@ sd <- SharedData$new(palmerpenguins::penguins)
 -   At a company, you have deliverables, priorities, limited resources, and timelines
 -   Leverage tools to make good use of available  resources
 
-# Lessons from a former graduate student
+## Lessons from a former graduate student
 
 -   Do internships
 -   Take advantage of being a student
@@ -115,7 +125,7 @@ sd <- SharedData$new(palmerpenguins::penguins)
     -   Identify your domain
     -   Learn what energizes you
 
-# Closing
+## Closing
 
 -   Student years: practice resilience, curiosity, communication, and NETWORKING!
 -   Industry: focus on communication and impact
