@@ -62,7 +62,7 @@ graph BT
 
 ![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2lvZXVxbHZ1aHE1YXhuNHMyaHA3ZWYxOTlqdGxlOTE4eHJuNjZlMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7btQT3dWrTI7pFZK/giphy.gif){fig-align="center"}
 
-## Insight #1: Making your work *transparent* can be **more important** than completing assigned work
+## Tip 1 of 4: Making your work *transparent* can be **more important** than completing assigned work
 
 -   You (and your team) are assigned work including dozens of projects
 
@@ -80,7 +80,7 @@ Give management your book of work with summaries so that the corporate machine k
 
 ![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXp1Znd3Z2ZkYmZrczVncWhrbGhiamNta2dkeHcxOGU4azU3anBxcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Ui3OlvcLJk4LiMZNQ4/giphy.gif){fig-align="center"}
 
-## Lesson #2: Let your collaborators/stakeholders explore the data
+## Tip 2 of 4: Let your collaborators/stakeholders explore the data
 
 ```{r}
 #| echo: false
@@ -94,14 +94,16 @@ sd <- SharedData$new(palmerpenguins::penguins)
 
 ```
 
-# Doing Data Science at a Company
+## Tip 3 of 4 Always compare results of your complex models to simple, known, and understood models
+
+-   Ensure your data science/analytics is interpretable!
+
+## Tip 4 of 4: Learn how to use AI to make yourself more productive
 
 -   At a company, you have deliverables, priorities, limited resources, and timelines
--   Communicate the impact of your work - get used to making slides for stakeholders
--   Ensure your data science/analytics is interpretable!
--   Success = code + communication + collaboration
+-   Leverage tools to make good use of available  resources
 
-# Lessons from a graduate student
+# Lessons from a former graduate student
 
 -   Do internships
 -   Take advantage of being a student
@@ -112,13 +114,6 @@ sd <- SharedData$new(palmerpenguins::penguins)
     -   Go to conferences
     -   Identify your domain
     -   Learn what energizes you
-
-# Companies WANT you to leverage AI
-
--   Use it to draft, code, summarize, ideate\
--   Think of LLMs as assistants for increasing your productivity
--   You are always needed to evaluate outputs
--   Only use it when you know what you want
 
 # Closing
 
