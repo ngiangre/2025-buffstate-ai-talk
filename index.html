@@ -28,6 +28,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
   <link rel="stylesheet" href="styles.css">
@@ -122,6 +188,8 @@
       margin-right: 0; 
     }
   </style>
+  <script type="module" src="index_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+  <link href="index_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
   <link href="index_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
   <script src="index_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
   <script src="index_files/libs/d3-3.3.8/d3.min.js"></script>
@@ -201,8 +269,8 @@ Nick Giangreco, PhD
 </div><div class="column" style="width:40%;">
 <div class="cell">
 <div class="cell-output-display">
-<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-bca437280a84a923409d" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-bca437280a84a923409d">{"x":{"diagram":"\ngraph BT\n  HS(High School)-->College(\"Biochemistry\n                             @ University of Rochester\")\n  College-->Postbac(\"Bioinformatics\n                     @ NIH\")\n  Postbac-->PhD(\"Systems Biology\n                 @ Columbia University\")\n  PhD-->Job(\"Precision Medicine\n             @ Regeneron\")\n"},"evals":[],"jsHooks":[]}</script>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-bdebe4344e208a154365" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-bdebe4344e208a154365">{"x":{"diagram":"\ngraph BT\n  HS(High School)-->College(\"Biochemistry\n                             @ University of Rochester\")\n  College-->Postbac(\"Bioinformatics\n                     @ NIH\")\n  Postbac-->PhD(\"Systems Biology\n                 @ Columbia University\")\n  PhD-->Job(\"Precision Medicine\n             @ Regeneron\")\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div></div>
@@ -244,15 +312,105 @@ Nick Giangreco, PhD
 </section>
 <section id="section-1" class="slide level2">
 <h2></h2>
+<p>Observable JS</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="89" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 88;"><span id="cb1-89"><a href=""></a>data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"https://raw.githubusercontent.com/allisonhorst/palmerpenguins/refs/heads/main/inst/extdata/penguins.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="layout-sidebar layout-sidebar-left">
+<div class="cell panel-sidebar">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="96" data-source-offset="-1"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 95;"><span id="cb2-96"><a href=""></a>viewof bill_length_min <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb2-97"><a href=""></a>  [<span class="dv">32</span><span class="op">,</span> <span class="dv">50</span>]<span class="op">,</span> </span>
+<span id="cb2-98"><a href=""></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">35</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Bill length (min):"</span>}</span>
+<span id="cb2-99"><a href=""></a>)</span>
+<span id="cb2-100"><a href=""></a></span>
+<span id="cb2-101"><a href=""></a>viewof islands <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>(</span>
+<span id="cb2-102"><a href=""></a>  [<span class="st">"Torgersen"</span><span class="op">,</span> <span class="st">"Biscoe"</span><span class="op">,</span> <span class="st">"Dream"</span>]<span class="op">,</span> </span>
+<span id="cb2-103"><a href=""></a>  { <span class="dt">value</span><span class="op">:</span> [<span class="st">"Torgersen"</span><span class="op">,</span> <span class="st">"Biscoe"</span><span class="op">,</span> <span class="st">"Dream"</span>]<span class="op">,</span> </span>
+<span id="cb2-104"><a href=""></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Islands:"</span></span>
+<span id="cb2-105"><a href=""></a>  }</span>
+<span id="cb2-106"><a href=""></a>)</span>
+<span id="cb2-107"><a href=""></a></span>
+<span id="cb2-108"><a href=""></a>filtered <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(<span class="kw">function</span>(penguin) {</span>
+<span id="cb2-109"><a href=""></a>  <span class="cf">return</span> bill_length_min <span class="op">&lt;</span> penguin<span class="op">.</span><span class="at">bill_length_mm</span> <span class="op">&amp;&amp;</span></span>
+<span id="cb2-110"><a href=""></a>         islands<span class="op">.</span><span class="fu">includes</span>(penguin<span class="op">.</span><span class="at">island</span>)<span class="op">;</span></span>
+<span id="cb2-111"><a href=""></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="panel-fill">
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Plot</a></li><li><a href="#tabset-1-2">Table</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="118" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 117;"><span id="cb3-118"><a href=""></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb3-119"><a href=""></a>  <span class="dt">inset</span><span class="op">:</span> <span class="dv">8</span><span class="op">,</span></span>
+<span id="cb3-120"><a href=""></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb3-121"><a href=""></a>  <span class="dt">color</span><span class="op">:</span> {</span>
+<span id="cb3-122"><a href=""></a>    <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb3-123"><a href=""></a>  }<span class="op">,</span></span>
+<span id="cb3-124"><a href=""></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb3-125"><a href=""></a>    Plot<span class="op">.</span><span class="fu">dot</span>(filtered<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"flipper_length_mm"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"body_mass_g"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"species"</span>})</span>
+<span id="cb3-126"><a href=""></a>  ]</span>
+<span id="cb3-127"><a href=""></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-3" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb4" data-startfrom="134" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 133;"><span id="cb4-134"><a href=""></a>Inputs<span class="op">.</span><span class="fu">table</span>(filtered)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-4" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<p>R</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="form-group crosstalk-input crosstalk-input-slider js-range-slider" id="mag" style="width: 250px;">
 <label class="control-label" for="mag">Magnitude</label>
-<input data-skin="shiny" data-type="double" data-min="4" data-max="5.7" data-from="4" data-to="5.7" data-step="0.1" data-grid="true" data-grid-num="8.5" data-grid-snap="false" data-prettify-separator="," data-keyboard="true" data-keyboard-step="5.88235294117647" data-drag-interval="true" data-data-type="number">
+<input data-skin="shiny" data-type="double" data-min="4" data-max="6.4" data-from="4" data-to="6.4" data-step="0.1" data-grid="true" data-grid-num="8" data-grid-snap="false" data-prettify-separator="," data-keyboard="true" data-keyboard-step="4.16666666666667" data-drag-interval="true" data-data-type="number">
 <script type="application/json" data-for="mag">{
-  "values": [4, 4, 4.1, 4.1, 4.1, 4.1, 4.1, 4.1, 4.1, 4.1, 4.1, 4.1, 4.1, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.7, 4.7, 4.7, 4.7, 4.7, 4.7, 4.7, 4.7, 4.7, 4.7, 4.8, 4.8, 4.8, 4.8, 4.9, 4.9, 4.9, 5, 5, 5, 5, 5.1, 5.2, 5.2, 5.3, 5.3, 5.5, 5.5, 5.5, 5.5, 5.7],
-  "keys": ["834", "150", "485", "791", "823", "175", "738", "185", "763", "522", "820", "793", "495", "660", "106", "939", "877", "387", "224", "182", "215", "551", "956", "778", "436", "135", "76", "49", "73", "147", "633", "326", "685", "504", "48", "393", "709", "670", "828", "405", "125", "35", "457", "904", "111", "706", "735", "475", "388", "694", "491", "339", "328", "347", "589", "190", "293", "610", "27", "379", "283", "172", "366", "309", "134", "164", "933", "887", "294", "627", "100", "782", "427", "644", "537", "239", "446", "408", "355", "609", "392", "552", "129", "501", "974", "958", "697", "549", "63", "462", "381", "601", "938", "752", "318", "512", "531", "70", "449", "275"],
-  "group": ["SharedData7f88bbf2"]
+  "values": [4, 4, 4.1, 4.1, 4.1, 4.1, 4.1, 4.1, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.7, 4.7, 4.7, 4.7, 4.7, 4.7, 4.7, 4.7, 4.8, 4.8, 4.8, 4.8, 4.8, 4.8, 4.9, 4.9, 4.9, 4.9, 5, 5, 5, 5, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.2, 5.2, 5.2, 5.3, 5.3, 5.3, 5.4, 5.6, 5.9, 6.4],
+  "keys": ["722", "919", "954", "485", "273", "863", "820", "174", "892", "132", "639", "718", "196", "864", "259", "79", "884", "84", "16", "215", "206", "76", "800", "591", "684", "73", "529", "429", "464", "59", "633", "768", "40", "977", "285", "842", "913", "255", "439", "509", "659", "749", "961", "803", "388", "47", "111", "573", "926", "735", "18", "337", "748", "647", "911", "160", "546", "27", "64", "596", "197", "610", "613", "32", "470", "679", "24", "248", "9", "940", "676", "609", "669", "632", "33", "552", "234", "680", "223", "188", "474", "462", "883", "981", "381", "714", "465", "416", "629", "378", "972", "812", "938", "564", "752", "765", "459", "636", "558", "152"],
+  "group": ["SharedDataf54239fc"]
 }</script>
 </div>
 </div>
@@ -260,12 +418,12 @@ Nick Giangreco, PhD
 <div class="container-fluid crosstalk-bscols">
 <div class="row">
 <div class="col-xs-6">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-5835460c3bda909cf473" style="width:100%;height:400px;"></div>
-<script type="application/json" data-for="htmlwidget-5835460c3bda909cf473">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addSelect","args":["SharedData7f88bbf2"]},{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[[-16.24,-17.8,-24.6,-23.55,-17.88,-34.12,-10.78,-28.56,-20.9,-24.5,-19.44,-20.65,-24.57,-16.3,-19.7,-23.85,-17.9,-18.07,-22.13,-18.06,-22.33,-26.1,-21.05,-20.18,-18.07,-27.6,-15.77,-15.75,-20.95,-20.77,-22.14,-20.58,-21.29,-15.03,-20.81,-25.14,-15.85,-20.92,-15.61,-27.17,-17.7,-13.44,-33.03,-16.11,-13.82,-27.63,-14.72,-18.85,-18,-20.33,-27.98,-16.51,-15.29,-22.28,-15.35,-16.45,-14.57,-20.83,-21.3,-25.68,-15.46,-20.45,-18.56,-23.54,-24.12,-17.82,-17.78,-13.07,-26.78,-15.36,-22.41,-11.77,-19.22,-20.94,-21.38,-27.72,-20.88,-21.56,-18.6,-23.71,-22.1,-20.21,-18.77,-27.23,-15.5,-21.11,-15.7,-27.27,-17.9,-20.74,-30.24,-35.56,-23.92,-17.14,-20.37,-19.64,-31.24,-11.55,-25.31,-27.27],[167.95,185.17,183.5,180.27,180.58,181.75,165.77,183.59,184.28,180.92,183.5,182.22,179.92,186,182.44,180.26,181.3,181.58,180.38,181.59,171.46,182.3,180.9,181.62,181.65,182.4,167.01,185.23,181.42,181.16,179.62,181.24,185.77,182.29,185.01,178.42,185.13,181.5,187.15,183.68,181.31,166.53,180.2,187.48,172.38,182.93,167.51,182.2,180.62,168.71,181.96,187.1,186.42,183.52,186.4,177.77,167.24,185.9,180.82,180.34,187.81,181.85,169.05,180.04,180.08,181.49,185.33,166.87,183.61,167.51,183.99,166.32,182.54,181.26,181.39,181.7,184.95,183.23,184.28,180.3,180.4,181.9,169.24,180.98,185.3,181.5,184.5,182.36,181.5,181.53,181.63,180.2,180.21,185.31,182.1,169.5,180.6,166.2,179.69,182.38],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},{"ctKey":["381","147","182","215","660","627","328","633","512","609","106","551","100","35","834","956","485","697","275","457","782","326","778","904","791","347","531","111","589","939","823","427","752","175","644","738","190","293","549","392","537","239","610","706","63","436","27","877","462","552","601","501","379","446","685","283","735","475","135","172","70","185","974","76","49","387","763","504","366","408","938","48","522","393","309","129","958","709","670","134","820","793","318","388","828","449","405","355","150","694","491","164","933","495","224","887","125","73","294","339"],"ctGroup":"SharedData7f88bbf2"}]}],"limits":{"lat":[-35.56,-10.78],"lng":[165.77,187.81]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-11e6ba7aa1848713ed6f" style="width:100%;height:400px;"></div>
+<script type="application/json" data-for="htmlwidget-11e6ba7aa1848713ed6f">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addSelect","args":["SharedDataf54239fc"]},{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[[-15.26,-19.47,-22.55,-20.56,-18.05,-16.24,-10.79,-21.44,-12.08,-17.8,-20.12,-17.99,-24.97,-16.32,-23.47,-29.9,-28.56,-15.94,-21.92,-17.94,-38.46,-14.28,-23.75,-23.39,-19.85,-18.82,-22.14,-21.29,-23.9,-19.62,-24.5,-17.9,-23.82,-11.34,-22.24,-16.45,-23.8,-14.72,-20.77,-17.05,-23.2,-17.4,-11.49,-17.95,-15.8,-27.23,-31.94,-26.4,-23.11,-17.93,-22.91,-18,-26.1,-12,-15.75,-28.56,-20.36,-20.54,-30.2,-15.55,-17.91,-23.55,-20.48,-23.53,-22.1,-18.82,-25.06,-23.85,-15.5,-21.97,-20.87,-15.28,-23.54,-28.74,-19.34,-18.11,-22.41,-22.43,-13.7,-20.95,-15.56,-17.95,-20.33,-17.02,-33.03,-22.87,-23.81,-19.85,-21.81,-29.1,-20.99,-20.82,-18.19,-15.2,-11.7,-14.57,-17.83,-15.36,-11.55,-25.8],[183.13,169.15,183.34,182.04,180.86,167.95,166.06,170.45,165.76,181.35,183.4,168.98,182.85,166.74,179.95,181.16,183.59,184.95,182.8,180.6,176.03,167.26,184.5,179.97,184.51,169.33,180.64,185.77,184.6,185.35,180.92,181.3,180.09,166.24,180.28,167.54,179.9,167.51,183.71,181.22,184.8,186.54,166.22,184.68,185.25,180.98,180.57,181.7,179.15,181.89,183.95,180.62,182.5,166.2,185.23,183.47,181.19,181.66,182,185.05,181.48,180.27,169.76,179.99,180.4,182.21,182.8,182.53,186.9,182.32,181.7,185.98,180.04,181.74,186.59,181.63,183.99,184.48,166.75,181.06,167.62,181.73,168.71,182.41,180.2,172.65,179.36,181.85,181.71,182.1,181.02,181.67,181.74,184.68,166.3,167.24,181.5,186.66,166.2,182.1],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},{"ctKey":["529","429","748","439","464","381","474","714","509","59","84","613","676","32","954","465","633","16","564","659","647","416","972","911","768","40","749","752","961","234","609","485","669","160","892","546","273","27","977","132","803","639","64","285","842","388","470","47","679","863","558","462","718","883","111","632","196","680","24","33","722","215","596","459","820","636","919","197","248","206","864","913","76","9","812","800","938","223","765","591","152","940","552","573","610","629","259","188","79","255","926","981","684","174","884","735","18","378","73","337"],"ctGroup":"SharedDataf54239fc"}]}],"limits":{"lat":[-38.46,-10.79],"lng":[165.76,186.9]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div class="col-xs-6">
-<div id="htmlwidget-b9c7db5ba3eb86847349" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b9c7db5ba3eb86847349">{"x":{"crosstalkOptions":{"key":["381","147","182","215","660","627","328","633","512","609","106","551","100","35","834","956","485","697","275","457","782","326","778","904","791","347","531","111","589","939","823","427","752","175","644","738","190","293","549","392","537","239","610","706","63","436","27","877","462","552","601","501","379","446","685","283","735","475","135","172","70","185","974","76","49","387","763","504","366","408","938","48","522","393","309","129","958","709","670","134","820","793","318","388","828","449","405","355","150","694","491","164","933","495","224","887","125","73","294","339"],"group":"SharedData7f88bbf2"},"style":"bootstrap","filter":"none","vertical":false,"extensions":["Scroller"],"data":[["381","147","182","215","660","627","328","633","512","609","106","551","100","35","834","956","485","697","275","457","782","326","778","904","791","347","531","111","589","939","823","427","752","175","644","738","190","293","549","392","537","239","610","706","63","436","27","877","462","552","601","501","379","446","685","283","735","475","135","172","70","185","974","76","49","387","763","504","366","408","938","48","522","393","309","129","958","709","670","134","820","793","318","388","828","449","405","355","150","694","491","164","933","495","224","887","125","73","294","339"],[-16.24,-17.8,-24.6,-23.55,-17.88,-34.12,-10.78,-28.56,-20.9,-24.5,-19.44,-20.65,-24.57,-16.3,-19.7,-23.85,-17.9,-18.07,-22.13,-18.06,-22.33,-26.1,-21.05,-20.18,-18.07,-27.6,-15.77,-15.75,-20.95,-20.77,-22.14,-20.58,-21.29,-15.03,-20.81,-25.14,-15.85,-20.92,-15.61,-27.17,-17.7,-13.44,-33.03,-16.11,-13.82,-27.63,-14.72,-18.85,-18,-20.33,-27.98,-16.51,-15.29,-22.28,-15.35,-16.45,-14.57,-20.83,-21.3,-25.68,-15.46,-20.45,-18.56,-23.54,-24.12,-17.82,-17.78,-13.07,-26.78,-15.36,-22.41,-11.77,-19.22,-20.94,-21.38,-27.72,-20.88,-21.56,-18.6,-23.71,-22.1,-20.21,-18.77,-27.23,-15.5,-21.11,-15.7,-27.27,-17.9,-20.74,-30.24,-35.56,-23.92,-17.14,-20.37,-19.64,-31.24,-11.55,-25.31,-27.27],[167.95,185.17,183.5,180.27,180.58,181.75,165.77,183.59,184.28,180.92,183.5,182.22,179.92,186,182.44,180.26,181.3,181.58,180.38,181.59,171.46,182.3,180.9,181.62,181.65,182.4,167.01,185.23,181.42,181.16,179.62,181.24,185.77,182.29,185.01,178.42,185.13,181.5,187.15,183.68,181.31,166.53,180.2,187.48,172.38,182.93,167.51,182.2,180.62,168.71,181.96,187.1,186.42,183.52,186.4,177.77,167.24,185.9,180.82,180.34,187.81,181.85,169.05,180.04,180.08,181.49,185.33,166.87,183.61,167.51,183.99,166.32,182.54,181.26,181.39,181.7,184.95,183.23,184.28,180.3,180.4,181.9,169.24,180.98,185.3,181.5,184.5,182.36,181.5,181.53,181.63,180.2,180.21,185.31,182.1,169.5,180.6,166.2,179.69,182.38],[188,97,67,535,622,75,93,53,58,377,293,506,484,48,397,497,593,603,577,604,119,49,616,558,593,61,64,280,559,568,587,602,57,399,79,554,290,546,49,44,549,44,186,61,613,80,155,501,636,40,53,62,153,90,98,138,162,104,624,434,40,534,217,564,493,573,223,132,40,123,128,70,570,556,501,94,82,271,255,510,603,576,218,401,93,538,118,65,573,598,80,42,524,223,397,204,328,96,507,45],[5.1,4.4,4.3,4.3,4.2,4.7,4.6,4.4,5.5,4.8,4.2,4.3,4.7,4.5,4,4.3,4.1,5,5.7,4.5,4.7,4.4,4.3,4.5,4.1,4.6,5.5,4.5,4.6,4.2,4.1,4.7,5.3,4.1,4.7,4.1,4.6,4.6,5,4.8,4.7,4.7,4.6,4.5,5,4.3,4.6,4.2,5,4.8,5.2,4.9,4.6,4.7,4.4,4.6,4.5,4.5,4.3,4.6,5.5,4.1,4.9,4.3,4.3,4.2,4.1,4.4,4.6,4.7,5.2,4.4,4.1,4.4,4.6,4.8,4.9,4.4,4.4,4.6,4.1,4.1,5.3,4.5,4.4,5.5,4.4,4.7,4,4.5,4.5,4.6,4.6,4.1,4.2,4.6,4.4,4.3,4.6,4.5],[68,22,25,22,23,41,20,20,92,43,15,24,33,10,12,32,13,65,104,23,32,11,10,31,16,11,73,28,27,12,23,44,69,10,42,15,29,31,30,27,33,27,27,19,61,14,18,23,100,38,89,46,31,19,17,17,18,19,14,41,91,14,35,15,21,14,10,24,22,28,72,18,22,21,36,59,50,36,31,30,11,16,53,39,25,104,30,21,19,36,17,32,50,15,22,35,18,14,35,16]],"container":"<table class=\"table table-condensed\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>lat<\/th>\n      <th>long<\/th>\n      <th>depth<\/th>\n      <th>mag<\/th>\n      <th>stations<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"deferRender":true,"scrollY":300,"scroller":true,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"lat","targets":1},{"name":"long","targets":2},{"name":"depth","targets":3},{"name":"mag","targets":4},{"name":"stations","targets":5}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4dbe99c149672a67f91c" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4dbe99c149672a67f91c">{"x":{"crosstalkOptions":{"key":["529","429","748","439","464","381","474","714","509","59","84","613","676","32","954","465","633","16","564","659","647","416","972","911","768","40","749","752","961","234","609","485","669","160","892","546","273","27","977","132","803","639","64","285","842","388","470","47","679","863","558","462","718","883","111","632","196","680","24","33","722","215","596","459","820","636","919","197","248","206","864","913","76","9","812","800","938","223","765","591","152","940","552","573","610","629","259","188","79","255","926","981","684","174","884","735","18","378","73","337"],"group":"SharedDataf54239fc"},"style":"bootstrap","filter":"none","vertical":false,"extensions":["Scroller"],"data":[["529","429","748","439","464","381","474","714","509","59","84","613","676","32","954","465","633","16","564","659","647","416","972","911","768","40","749","752","961","234","609","485","669","160","892","546","273","27","977","132","803","639","64","285","842","388","470","47","679","863","558","462","718","883","111","632","196","680","24","33","722","215","596","459","820","636","919","197","248","206","864","913","76","9","812","800","938","223","765","591","152","940","552","573","610","629","259","188","79","255","926","981","684","174","884","735","18","378","73","337"],[-15.26,-19.47,-22.55,-20.56,-18.05,-16.24,-10.79,-21.44,-12.08,-17.8,-20.12,-17.99,-24.97,-16.32,-23.47,-29.9,-28.56,-15.94,-21.92,-17.94,-38.46,-14.28,-23.75,-23.39,-19.85,-18.82,-22.14,-21.29,-23.9,-19.62,-24.5,-17.9,-23.82,-11.34,-22.24,-16.45,-23.8,-14.72,-20.77,-17.05,-23.2,-17.4,-11.49,-17.95,-15.8,-27.23,-31.94,-26.4,-23.11,-17.93,-22.91,-18,-26.1,-12,-15.75,-28.56,-20.36,-20.54,-30.2,-15.55,-17.91,-23.55,-20.48,-23.53,-22.1,-18.82,-25.06,-23.85,-15.5,-21.97,-20.87,-15.28,-23.54,-28.74,-19.34,-18.11,-22.41,-22.43,-13.7,-20.95,-15.56,-17.95,-20.33,-17.02,-33.03,-22.87,-23.81,-19.85,-21.81,-29.1,-20.99,-20.82,-18.19,-15.2,-11.7,-14.57,-17.83,-15.36,-11.55,-25.8],[183.13,169.15,183.34,182.04,180.86,167.95,166.06,170.45,165.76,181.35,183.4,168.98,182.85,166.74,179.95,181.16,183.59,184.95,182.8,180.6,176.03,167.26,184.5,179.97,184.51,169.33,180.64,185.77,184.6,185.35,180.92,181.3,180.09,166.24,180.28,167.54,179.9,167.51,183.71,181.22,184.8,186.54,166.22,184.68,185.25,180.98,180.57,181.7,179.15,181.89,183.95,180.62,182.5,166.2,185.23,183.47,181.19,181.66,182,185.05,181.48,180.27,169.76,179.99,180.4,182.21,182.8,182.53,186.9,182.32,181.7,185.98,180.04,181.74,186.59,181.63,183.99,184.48,166.75,181.06,167.62,181.73,168.71,182.41,180.2,172.65,179.36,181.85,181.71,182.1,181.02,181.67,181.74,184.68,166.3,167.24,181.5,186.66,166.2,182.1],[393,149,66,499,632,188,142,166,63,535,284,234,137,50,543,215,53,306,273,627,148,211,54,541,184,230,591,57,41,57,377,593,498,103,601,125,498,155,251,527,97,85,84,260,82,401,168,329,564,567,64,636,133,94,280,48,637,559,125,292,555,535,134,538,603,417,133,204,46,261,560,162,564,211,56,568,128,65,46,611,127,583,40,420,186,56,521,576,323,179,626,577,616,99,139,162,590,112,96,68],[4.4,4.4,4.6,4.5,4.4,5.1,5,5.1,4.5,4.4,4.3,4.7,4.8,4.7,4.1,5.1,4.4,4.3,5.3,4.5,4.6,5.1,5.2,4.6,4.4,4.4,4.5,5.3,4.5,4.9,4.8,4.1,4.8,4.6,4.2,4.6,4.1,4.6,4.4,4.2,4.5,4.2,4.6,4.4,4.4,4.5,4.7,4.5,4.7,4.1,5.9,5,4.2,5,4.5,4.8,4.2,4.9,4.7,4.8,4,4.3,4.6,5.4,4.1,5.6,4,4.6,4.7,4.3,4.2,4.4,4.3,4.7,5.2,4.3,5.2,4.9,5.3,4.3,6.4,4.7,4.8,4.5,4.6,5.1,4.2,4.9,4.2,4.4,4.5,5,4.3,4.1,4.2,4.5,4.5,5.1,4.3,4.5],[28,15,18,29,15,68,40,22,51,23,15,28,40,30,21,51,20,11,78,29,44,51,74,50,26,11,18,69,22,31,43,13,40,30,21,18,12,18,47,24,13,28,32,21,39,39,39,24,17,27,118,100,17,31,28,56,23,50,22,42,17,22,33,87,11,129,14,27,18,13,13,36,15,35,49,36,72,48,71,20,122,57,38,29,27,50,23,54,15,19,36,67,17,14,15,18,21,57,14,26]],"container":"<table class=\"table table-condensed\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>lat<\/th>\n      <th>long<\/th>\n      <th>depth<\/th>\n      <th>mag<\/th>\n      <th>stations<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"deferRender":true,"scrollY":300,"scroller":true,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"lat","targets":1},{"name":"long","targets":2},{"name":"depth","targets":3},{"name":"mag","targets":4},{"name":"stations","targets":5}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -526,6 +684,17 @@ Nick Giangreco, PhD
           RevealZoom
         ]
       });
+    </script>
+    <script type="ojs-module-contents">
+    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImRhdGEgPSBGaWxlQXR0YWNobWVudChcImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9hbGxpc29uaG9yc3QvcGFsbWVycGVuZ3VpbnMvcmVmcy9oZWFkcy9tYWluL2luc3QvZXh0ZGF0YS9wZW5ndWlucy5jc3ZcIikuY3N2KHsgdHlwZWQ6IHRydWUgfSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ilxudmlld29mIGJpbGxfbGVuZ3RoX21pbiA9IElucHV0cy5yYW5nZShcbiAgWzMyLCA1MF0sIFxuICB7dmFsdWU6IDM1LCBzdGVwOiAxLCBsYWJlbDogXCJCaWxsIGxlbmd0aCAobWluKTpcIn1cbilcblxudmlld29mIGlzbGFuZHMgPSBJbnB1dHMuY2hlY2tib3goXG4gIFtcIlRvcmdlcnNlblwiLCBcIkJpc2NvZVwiLCBcIkRyZWFtXCJdLCBcbiAgeyB2YWx1ZTogW1wiVG9yZ2Vyc2VuXCIsIFwiQmlzY29lXCIsIFwiRHJlYW1cIl0sIFxuICAgIGxhYmVsOiBcIklzbGFuZHM6XCJcbiAgfVxuKVxuXG5maWx0ZXJlZCA9IGRhdGEuZmlsdGVyKGZ1bmN0aW9uKHBlbmd1aW4pIHtcbiAgcmV0dXJuIGJpbGxfbGVuZ3RoX21pbiA8IHBlbmd1aW4uYmlsbF9sZW5ndGhfbW0gJiZcbiAgICAgICAgIGlzbGFuZHMuaW5jbHVkZXMocGVuZ3Vpbi5pc2xhbmQpO1xufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuUGxvdC5wbG90KHtcbiAgaW5zZXQ6IDgsXG4gIGdyaWQ6IHRydWUsXG4gIGNvbG9yOiB7XG4gICAgbGVnZW5kOiB0cnVlLFxuICB9LFxuICBtYXJrczogW1xuICAgIFBsb3QuZG90KGZpbHRlcmVkLCB7eDogXCJmbGlwcGVyX2xlbmd0aF9tbVwiLCB5OiBcImJvZHlfbWFzc19nXCIsIHN0cm9rZTogXCJzcGVjaWVzXCJ9KVxuICBdXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC00IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiSW5wdXRzLnRhYmxlKGZpbHRlcmVkKVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdiaWxsX2xlbmd0aF9taW4nKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnaXNsYW5kcycpIn1dfQ==
+    </script>
+    <script type="module">
+    if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+    window._ojs.paths.runtimeToDoc = "../../..";
+    window._ojs.paths.runtimeToRoot = "../../..";
+    window._ojs.paths.docToRoot = "";
+    window._ojs.selfContained = false;
+    window._ojs.runtime.interpretFromScriptTags();
     </script>
     
     <script>

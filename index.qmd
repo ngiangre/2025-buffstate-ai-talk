@@ -84,6 +84,63 @@ Give management your book of work with summaries so that the corporate machine k
 
 ##
 
+Observable JS
+
+```{ojs}
+data = FileAttachment("https://raw.githubusercontent.com/allisonhorst/palmerpenguins/refs/heads/main/inst/extdata/penguins.csv").csv({ typed: true })
+```
+
+```{ojs}
+//| panel: sidebar
+
+viewof bill_length_min = Inputs.range(
+  [32, 50], 
+  {value: 35, step: 1, label: "Bill length (min):"}
+)
+
+viewof islands = Inputs.checkbox(
+  ["Torgersen", "Biscoe", "Dream"], 
+  { value: ["Torgersen", "Biscoe", "Dream"], 
+    label: "Islands:"
+  }
+)
+
+filtered = data.filter(function(penguin) {
+  return bill_length_min < penguin.bill_length_mm &&
+         islands.includes(penguin.island);
+})
+```
+
+::: {.panel-tabset}
+
+### Plot
+
+```{ojs}
+
+Plot.plot({
+  inset: 8,
+  grid: true,
+  color: {
+    legend: true,
+  },
+  marks: [
+    Plot.dot(filtered, {x: "flipper_length_mm", y: "body_mass_g", stroke: "species"})
+  ]
+})
+```
+
+### Table
+
+```{ojs}
+Inputs.table(filtered)
+```
+
+:::
+
+##
+
+R
+
 ```{r}
 library(crosstalk)
 library(leaflet)
