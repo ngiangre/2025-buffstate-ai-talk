@@ -84,7 +84,7 @@ Give management your book of work with summaries so that the corporate machine k
 
 ##
 
-Observable JS
+This is an example for interactively examining interesting data points using Observable JS
 
 ```{ojs ojs_load_data}
 data = FileAttachment("https://raw.githubusercontent.com/allisonhorst/palmerpenguins/refs/heads/main/inst/extdata/penguins.csv").csv({ typed: true })
@@ -137,9 +137,9 @@ Inputs.table(filtered)
 
 :::
 
-##
+## 
 
-R
+This is an example for interactively examining interesting data points using R
 
 ```{r crosstalk}
 library(crosstalk)
@@ -168,14 +168,14 @@ dat <-
       biomarker = round(biomarker, 3)
     )
 
-sd <- SharedData$new(dat, key = "subject", group = "biomarker")
+sd <- SharedData$new(dat)
 
-bscols(
+pltly <-
   plotly::ggplotly(
     ggplot(sd,
-    aes(disease,biomarker,fill = disease)
+      aes(disease,biomarker,fill = disease)
     ) + 
-    ggforce::geom_sina(pch = 21,size = 4,alpha = .5) +
+    geom_jitter(pch = 21,size = 4,height=0) +
     scale_fill_viridis_d()
   ) |>
     plotly::style(hoverlabel = list(bgcolor = "white")) |>
@@ -185,16 +185,34 @@ bscols(
     ) |>
     plotly::highlight(
       on = "plotly_selected", 
-      off = "plotly_deselect"
-    ),
+      off = "plotly_deselect",
+      persistent = TRUE
+    ) |>
+    plotly::highlight(
+      on = "plotly_click", 
+      off = "plotly_doubleclick",
+      persistent = TRUE
+    ) |>
+      plotly::config(displayModeBar = FALSE)
+tbl <-
   DT::datatable(
     sd,
-    width = '400px', height = '600px'
+    width = '400px', height = '700px',
+    extensions = 'Scroller',
+    fillContainer = TRUE,
+    options = list(
+      deferRender = TRUE,
+      scrollY = 300,
+      scroller = TRUE
+    )
   ) |>
     DT::formatStyle(
       columns = colnames(dat),
-      fontSize="18px"
-    ),
+      fontSize="24px"
+    )
+bscols(
+  pltly,
+  tbl,
   widths = c(5,7)
 )
 ```
