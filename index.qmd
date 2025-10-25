@@ -27,7 +27,7 @@ mermaid-format: svg
 :::
 
 ::: {.column width="40%"}
-```{r diagrammr}
+```{r diagrammr_timeline}
 
 DiagrammeR::mermaid(diagram = '
 graph BT
@@ -73,6 +73,25 @@ graph BT
 -   Managers/Directors are accountable to SL
 
 -   If Managers/Directors can't communicate your work, how will SL know?
+
+## Here's an example workflow that would communicate your work to Leadership
+
+::: {.center}
+
+```{r diagrammr_reporting}
+
+DiagrammeR::mermaid(diagram = '
+graph TB
+  A("Jira/Excel/Database
+     or anything you can easily edit")-->B("API or
+                              Persistent Database")
+  B-->C("Scheduled Report/Google Docs")
+  C-->A
+')
+  
+```
+
+:::
 
 ##
 
@@ -165,7 +184,8 @@ dat <-
     )
   ) |>
     dplyr::mutate(
-      biomarker = round(biomarker, 3)
+      biomarker = round(biomarker, 3),
+      disease = factor(disease, levels = c("stage 1", "stage 2", "stage 3"))
     )
 
 sd <- SharedData$new(dat)
@@ -222,10 +242,133 @@ bscols(
 
 -   Ensure your data science/analytics is interpretable!
 
+##
+
+```{r inference}
+
+library(patchwork)
+
+set.seed(123)
+
+# -----------------------------------------------------------------------------
+# MODEL 1: Fold Change Between Stages
+# -----------------------------------------------------------------------------
+folds <- dat |>
+  dplyr::group_by(disease) |>
+  dplyr::summarise(mean_biomarker = mean(biomarker), .groups = "drop") |>
+  dplyr::mutate(
+    fold_change_vs_stage1 = mean_biomarker / mean_biomarker[disease == "stage 1"][1]
+  )
+
+fold_plot <-
+  ggplot(dat, aes(disease, biomarker)) +
+  geom_violin(alpha = 0.3) +
+  geom_jitter(size = 1,height = 0, width = .1) +
+  scale_fill_viridis_d() +
+  geom_text(
+    data = folds,
+    aes(
+      y = max(dat$biomarker) * 0.95,
+      label = sprintf("FC vs Stage1 = %.2f", fold_change_vs_stage1)
+    ),
+    nudge_y = 5, size = 3
+  ) +
+  ggtitle("Model 1: Fold Change Between Disease Stages") +
+  theme_minimal()
+
+# -----------------------------------------------------------------------------
+# MODEL 2: Linear Regression
+# -----------------------------------------------------------------------------
+lm_fit <- lm(biomarker ~ disease, data = dat)
+lm_summary <- broom::tidy(lm_fit)
+
+pred_lm <- dat |>
+  dplyr::mutate(pred = predict(lm_fit, newdata = dat))
+
+p_lm <-
+  ggplot(pred_lm, aes(disease, biomarker)) +
+  geom_violin(alpha = 0.3) +
+  geom_jitter(aes(color = "Observed"), size = 1,height = 0, width = .1) +
+  geom_boxplot(outlier.shape = NA,alpha = 0, width = 0.05,color = "gray30") +
+  geom_point(aes(y = pred, color = "Predicted"), size = 3) +
+  scale_color_manual(values = c("Observed" = "black", "Predicted" = "red")) +
+  scale_y_continuous(breaks = scales::pretty_breaks(20)) +
+  guides(color = guide_none()) +
+  ggtitle("Model 2: Linear Regression (lm)") +
+  theme_minimal()
+
+# -----------------------------------------------------------------------------
+# MODEL 3: Bayesian Regression
+# -----------------------------------------------------------------------------
+brm_fit <- brms::brm(
+  formula = biomarker ~ disease,
+  data = dat,
+  family = gaussian(),
+  chains = 2, iter = 2000, refresh = 0
+)
+
+posterior_df <- brms::as_draws_df(brm_fit)
+
+# Columns usually look like: "b_Intercept", "b_diseaseStage2", "b_diseaseStage3"
+posterior_long <- 
+  posterior_df |>
+  dplyr::select(starts_with("b_")) |>
+  tidyr::pivot_longer(
+    everything(), 
+    names_to = "parameter", 
+    values_to = "estimate"
+  )  |>
+  dplyr::mutate(
+    parameter = dplyr::case_when(
+      parameter == "b_Intercept" ~ "stage 1",
+      parameter == "b_diseasestage2" ~ "stage 2",
+      parameter == "b_diseasestage3" ~ "stage 3"
+    ) |> 
+      factor(levels = c("stage 1", "stage 2", "stage 3"))
+  )
+
+p_brm <-
+  # Plot the posterior for each beta
+  ggplot(posterior_long, 
+    aes(x = parameter, y = estimate, fill = parameter)
+  ) +
+  geom_violin(alpha = 0.5, width = 1.2, show.legend = FALSE) +
+  geom_boxplot(outlier.shape = NA,alpha = 0, width = 0.05,color = "gray30", show.legend = FALSE) +
+  geom_vline(xintercept = 0, linetype = "dashed") +
+  scale_y_continuous(breaks = scales::pretty_breaks(20)) +
+  labs(
+    title = "Posterior distributions of regression coefficients",
+    x = "Estimate",
+    y = NULL
+  ) +
+  scale_fill_viridis_d() +
+  ggtitle("Model 3: Bayesian Regression (brms)") +
+  theme_minimal()
+
+# -----------------------------------------------------------------------------
+# Combine Plots
+# -----------------------------------------------------------------------------
+design <- "
+  ##AAA##
+  BBBCCCC
+  BBBCCCC
+"
+fold_plot + p_lm + p_brm +
+  plot_annotation(
+    title = "Comparing Models: Disease Stage Effects on Biomarker Levels"
+  ) +
+    plot_layout(design = design)
+
+```
+
 ## Tip 4 of 4: Learn how to use AI to make yourself more productive
 
 -   At a company, you have deliverables, priorities, limited resources, and timelines
 -   Leverage tools to make good use of available  resources
+-   Big companies usually have an internal LLM resource
+-   Many public, paid LLM API options
+-   Use them for drafts/initial start, but you are the expert!
+-   This presentation involved 50/50 ChatGPT + me 
 
 ## Lessons from a former graduate student
 
@@ -233,11 +376,12 @@ bscols(
 -   Take advantage of being a student
     -   Network!
     -   Learn as much as you can!
-    -   Experience matters
+    -   Experience helps
 -   Invest in your career
     -   Go to conferences
     -   Identify your domain
     -   Learn what energizes you
+    -   Find your people
 
 ## Closing
 
