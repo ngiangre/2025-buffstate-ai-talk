@@ -27,7 +27,7 @@ mermaid-format: svg
 :::
 
 ::: {.column width="40%"}
-```{r}
+```{r diagrammr}
 
 DiagrammeR::mermaid(diagram = '
 graph BT
@@ -86,11 +86,11 @@ Give management your book of work with summaries so that the corporate machine k
 
 Observable JS
 
-```{ojs}
+```{ojs ojs_load_data}
 data = FileAttachment("https://raw.githubusercontent.com/allisonhorst/palmerpenguins/refs/heads/main/inst/extdata/penguins.csv").csv({ typed: true })
 ```
 
-```{ojs}
+```{ojs ojs_filter_data}
 //| panel: sidebar
 
 viewof bill_length_min = Inputs.range(
@@ -115,7 +115,7 @@ filtered = data.filter(function(penguin) {
 
 ### Plot
 
-```{ojs}
+```{ojs ojs_plot_data}
 
 Plot.plot({
   inset: 8,
@@ -131,7 +131,7 @@ Plot.plot({
 
 ### Table
 
-```{ojs}
+```{ojs ojs_filter_table}
 Inputs.table(filtered)
 ```
 
@@ -141,22 +141,61 @@ Inputs.table(filtered)
 
 R
 
-```{r}
+```{r crosstalk}
 library(crosstalk)
-library(leaflet)
-library(DT)
+library(ggplot2)
 
 # Wrap data frame in SharedData
-sd <- SharedData$new(quakes[sample(nrow(quakes), 100),])
+dat <-
+  dplyr::bind_rows(
+    tibble::tibble(
+      subject = paste0("Subject ",1:10),
+      biomarker = rexp(10,rate = 1/5),
+      disease = "stage 1"
+    ),
+    tibble::tibble(
+      subject = paste0("Subject ",11:20),
+      biomarker = rexp(10,rate = 1/7),
+      disease = "stage 2"
+    ), 
+    tibble::tibble(
+      subject = paste0("Subject ",21:30),
+      biomarker = rexp(10,rate = 1/15),
+      disease = "stage 3"
+    )
+  ) |>
+    dplyr::mutate(
+      biomarker = round(biomarker, 3)
+    )
 
-# Create a filter input
-filter_slider("mag", "Magnitude", sd, column=~mag, step=0.1, width=250)
+sd <- SharedData$new(dat, key = "subject", group = "biomarker")
 
-# Use SharedData like a dataframe with Crosstalk-enabled widgets
 bscols(
-  leaflet(sd) |> addTiles() |> addMarkers(),
-  datatable(sd, extensions="Scroller", style="bootstrap", class="compact", width="100%",
-    options=list(deferRender=TRUE, scrollY=300, scroller=TRUE))
+  plotly::ggplotly(
+    ggplot(sd,
+    aes(disease,biomarker,fill = disease)
+    ) + 
+    ggforce::geom_sina(pch = 21,size = 4,alpha = .5) +
+    scale_fill_viridis_d()
+  ) |>
+    plotly::style(hoverlabel = list(bgcolor = "white")) |>
+    plotly::layout(
+      showlegend = FALSE,
+      width = 400, height = 600  
+    ) |>
+    plotly::highlight(
+      on = "plotly_selected", 
+      off = "plotly_deselect"
+    ),
+  DT::datatable(
+    sd,
+    width = '400px', height = '600px'
+  ) |>
+    DT::formatStyle(
+      columns = colnames(dat),
+      fontSize="18px"
+    ),
+  widths = c(5,7)
 )
 ```
 
