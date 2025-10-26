@@ -76,11 +76,11 @@ graph BT
 
 ## Here's an example workflow that would communicate your work to Leadership
 
-::: {.center}
-
 ```{r diagrammr_reporting}
 
 DiagrammeR::mermaid(diagram = '
+%%| fig-width: 8
+%%| fig-height: 10
 graph TB
   A("Jira/Excel/Database
      or anything you can easily edit")-->B("API or
@@ -90,8 +90,6 @@ graph TB
 ')
   
 ```
-
-:::
 
 ##
 
@@ -245,6 +243,9 @@ bscols(
 ##
 
 ```{r inference}
+#| fig.width: 8
+#| fig.height: 8
+#| fig-align: center
 
 library(patchwork)
 
