@@ -280,7 +280,7 @@ bscols(
 
 library(patchwork)
 
-set.seed(123)
+set.seed(1234)
 
 # -----------------------------------------------------------------------------
 # MODEL 1: Fold Change Between Stages
@@ -413,8 +413,4 @@ fold_plot + p_lm + p_brm +
     -   Learn what energizes you
     -   Find people that inspire you
 
-## Closing
-
--   Student years: practice resilience, curiosity, communication, and NETWORKING!
--   Industry: focus on communication and impact
--   Final message: use your student time to build skills + mindset for impact
+# Thank you for listening!
