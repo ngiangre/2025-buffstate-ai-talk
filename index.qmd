@@ -11,11 +11,11 @@ format:
 mermaid-format: svg
 ---
 
-### 
+## 
 
 ![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNndhN3BwNmc0aXBtZmNnZTR0bjlqcTV3bDFkbnF4OWxpNmd0aXQ0biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fnuSiwXMTV3zmYDf6k/giphy.gif){fig-align="center"}
 
-### Hi, I'm Nick 👋
+## Hi, I'm Nick 👋
 
 ::::: columns
 ::: {.nonincremental .column width="60%"}
@@ -47,7 +47,7 @@ graph BT
 :::
 :::::
 
-### This presentation is my perspective doing data science in industry
+## This presentation is my perspective doing data science in industry
 
 -   I really liked academia and doing biomedical data science research
 
@@ -60,11 +60,11 @@ graph BT
 
 -   I'd like to share **insights/tips** as an early-career data scientist
 
-### This is an N=1, results may vary, perspectives are my own
+## This is an N=1, results may vary, perspectives are my own
 
 ![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2lvZXVxbHZ1aHE1YXhuNHMyaHA3ZWYxOTlqdGxlOTE4eHJuNjZlMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7btQT3dWrTI7pFZK/giphy.gif){fig-align="center"}
 
-### Tip 1 of 4: Making your work *transparent* can be **more important** than completing assigned work
+## Tip 1 of 4: Making your work *transparent* can be **more important** than completing assigned work
 
 -   You (and your team) are assigned work including dozens of projects
 
@@ -76,7 +76,7 @@ graph BT
 
 -   If Managers/Directors can't communicate your work, how will SL know?
 
-###
+##
 
 Here's an example workflow that would communicate your work to Leadership
 
@@ -124,15 +124,15 @@ visNetwork(nodes, edges, width = "100%", height = "600px") %>%
 
 :::
 :::::
-###
+##
 
 Give management your book of work with summaries so that the corporate machine keeps running
 
 ![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXp1Znd3Z2ZkYmZrczVncWhrbGhiamNta2dkeHcxOGU4azU3anBxcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Ui3OlvcLJk4LiMZNQ4/giphy.gif){fig-align="center"}
 
-### Tip 2 of 4: Let your collaborators/stakeholders explore the data
+## Tip 2 of 4: Let your collaborators/stakeholders explore the data
 
-###
+##
 
 This is an example for interactively examining interesting data points using Observable JS
 
@@ -163,7 +163,7 @@ filtered = data.filter(function(penguin) {
 
 ::: {.panel-tabset}
 
-#### Plot
+### Plot
 
 ```{ojs ojs_plot_data}
 
@@ -179,7 +179,7 @@ Plot.plot({
 })
 ```
 
-#### Table
+### Table
 
 ```{ojs ojs_filter_table}
 Inputs.table(filtered)
@@ -187,7 +187,7 @@ Inputs.table(filtered)
 
 :::
 
-###
+##
 
 This is an example for interactively examining interesting data points using R
 
@@ -269,11 +269,11 @@ bscols(
 ```
 
 
-### Tip 3 of 4 Always compare results of your complex models to simple, known, and understood models
+## Tip 3 of 4 Always compare results of your complex models to simple, known, and understood models
 
 -   Ensure your data science/analytics is interpretable!
 
-###
+##
 
 ```{r inference}
 #| fig.width: 8
@@ -395,7 +395,7 @@ fold_plot + p_lm + p_brm +
 
 ```
 
-### Tip 4 of 4: Learn how to use AI to make yourself more productive
+## Tip 4 of 4: Learn how to use AI to make yourself more productive
 
 -   At a company, you have deliverables, priorities, limited resources, and timelines
 -   Leverage tools to make good use of available  resources
@@ -404,7 +404,7 @@ fold_plot + p_lm + p_brm +
 -   Use them for drafts/initial start, but you are the expert!
 -   This presentation involved 50/50 ChatGPT + me 
 
-### Lessons from a former graduate student
+## Lessons from a former graduate student
 
 -   Do internships
 -   Take advantage of being a student
@@ -417,7 +417,7 @@ fold_plot + p_lm + p_brm +
     -   Learn what energizes you
     -   Find your people
 
-### Closing
+## Closing
 
 -   Student years: practice resilience, curiosity, communication, and NETWORKING!
 -   Industry: focus on communication and impact
