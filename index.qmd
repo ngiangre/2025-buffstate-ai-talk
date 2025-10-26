@@ -11,6 +11,8 @@ format:
 mermaid-format: svg
 ---
 
+### 
+
 ![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNndhN3BwNmc0aXBtZmNnZTR0bjlqcTV3bDFkbnF4OWxpNmd0aXQ0biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fnuSiwXMTV3zmYDf6k/giphy.gif){fig-align="center"}
 
 ### Hi, I'm Nick 👋
