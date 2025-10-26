@@ -301,7 +301,7 @@ fold_plot <-
     data = folds,
     aes(
       y = max(dat$biomarker) * 0.95,
-      label = sprintf("FC vs Stage1 = %.2f", fold_change_vs_stage1)
+      label = sprintf("FC: %.2f", fold_change_vs_stage1)
     ),
     nudge_y = 5, size = 3
   ) +
