@@ -74,23 +74,54 @@ graph BT
 
 -   If Managers/Directors can't communicate your work, how will SL know?
 
-## Here's an example workflow that would communicate your work to Leadership
+## 
 
-```{r diagrammr_reporting}
+Here's an example workflow that would communicate your work to Leadership
 
-DiagrammeR::mermaid(diagram = '
-%%| fig-width: 8
-%%| fig-height: 10
-graph TB
-  A("Jira/Excel/Database
-     or anything you can easily edit")-->B("API or
-                              Persistent Database")
-  B-->C("Scheduled Report/Google Docs")
-  C-->A
-')
+::::: columns
+::: {.center .column width="100%"}
+
+```{r reporting}
+library(visNetwork)
+
+# Define nodes (more spread out for longer arrows)
+nodes <- data.frame(
+  id = 1:3,
+  label = c(
+    "API or Persistent Database",
+    "Jira/Excel/Database or anything you can easily edit",
+    "Scheduled Report/Google Docs"
+  ),
+  shape = "box",
+  color = list(
+    background = "#F8F8FF",
+    border = "#CCCCFF",
+    highlight = list(background = "#F0F8FF", border = "#8888FF")
+  ),
+  font = list(size = 16),
+  x = c(0, -150, 150),   # Spread nodes wider apart horizontally
+  y = c(-100, 50, 50)  # Increase vertical spacing for longer edges
+)
+
+# Define edges with curved paths to preserve circular flow
+edges <- data.frame(
+  from = c(1, 2, 3),
+  to   = c(2, 3, 1),
+  arrows = "to",
+  smooth = list(enabled = TRUE, type = "curvedCW", roundness = 0.2),
+  width = 2
+)
+
+# Build network
+visNetwork(nodes, edges, width = "100%", height = "600px") %>%
+  visEdges(smooth = TRUE) %>%
+  visPhysics(enabled = FALSE) %>%
+  visNodes(borderWidth = 2, shape = "box", shadow = TRUE)
   
 ```
 
+:::
+:::::
 ##
 
 Give management your book of work with summaries so that the corporate machine keeps running
