@@ -4,7 +4,6 @@ author: Nick Giangreco, PhD
 format: 
   revealjs:
     slide-number: true
-    incremental: true
     mermaid:
       theme: default
     css: styles.css
@@ -16,7 +15,7 @@ mermaid-format: svg
 ## Hi, I'm Nick 👋
 
 ::::: columns
-::: {.nonincremental .column width="60%"}
+::: {.nonincremental .column width="50%"}
 -   Biochemistry background
 -   Self-taught bioinformatician
 -   Research scientist in biomedical data science
@@ -26,7 +25,7 @@ mermaid-format: svg
     -   Not a tech organization
 :::
 
-::: {.column width="40%"}
+::: {.column width="50%"}
 ```{r diagrammr_timeline}
 
 DiagrammeR::mermaid(diagram = '
@@ -64,6 +63,8 @@ graph BT
 
 ## Tip 1 of 4: Making your work *transparent* can be **more important** than completing assigned work
 
+::::: columns
+::: {.nonincremental .column width="50%"}
 -   You (and your team) are assigned work including dozens of projects
 
 -   Stakeholders are consumers and producers of your work
@@ -73,6 +74,20 @@ graph BT
 -   Managers/Directors are accountable to SL
 
 -   If Managers/Directors can't communicate your work, how will SL know?
+:::
+::: {.nonincremental .column width="50%"}
+```{r diagrammr_leadership}
+
+DiagrammeR::mermaid(diagram = '
+graph BT
+  Y(You)-->M(Managers)
+  M-->SL("Senior Leadership")
+')
+  
+```
+:::
+
+:::::
 
 ##
 
@@ -413,4 +428,14 @@ fold_plot + p_lm + p_brm +
     -   Learn what energizes you
     -   Find people that inspire you
 
-# Thank you for listening!
+# Feel free to reach out!
+
+nickg.bio
+
+https://www.linkedin.com/in/nickgiangreco/
+
+https://github.com/ngiangre
+
+nick.giangreco AT gmail.com
+
+<img src="qr.png" width="200" height="200" />
