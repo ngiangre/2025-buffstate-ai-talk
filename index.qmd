@@ -15,7 +15,7 @@ mermaid-format: svg
 ## Hi, I'm Nick 👋
 
 ::::: columns
-::: {.nonincremental .column width="50%"}
+::: {.nonincremental .column width="60%"}
 -   Biochemistry background
 -   Self-taught bioinformatician
 -   Research scientist in biomedical data science
@@ -25,7 +25,7 @@ mermaid-format: svg
     -   Not a tech organization
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ```{r diagrammr_timeline}
 
 DiagrammeR::mermaid(diagram = '
@@ -64,7 +64,7 @@ graph BT
 ## Tip 1 of 4: Making your work *transparent* can be **more important** than completing assigned work
 
 ::::: columns
-::: {.nonincremental .column width="50%"}
+::: {.nonincremental .column width="60%"}
 -   You (and your team) are assigned work including dozens of projects
 
 -   Stakeholders are consumers and producers of your work
@@ -75,7 +75,7 @@ graph BT
 
 -   If Managers/Directors can't communicate your work, how will SL know?
 :::
-::: {.nonincremental .column width="50%"}
+::: {.nonincremental .column width="40%"}
 ```{r diagrammr_leadership}
 
 DiagrammeR::mermaid(diagram = '
