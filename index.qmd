@@ -7,6 +7,7 @@ format:
     mermaid:
       theme: default
     css: styles.css
+    cache: true
 mermaid-format: svg
 ---
 
@@ -15,20 +16,20 @@ mermaid-format: svg
 ## Hi, I'm Nick 👋
 
 ::::: columns
-::: {.nonincremental .column width="60%"}
+::: {.column width="60%"}
 -   Biochemistry background
 -   Self-taught bioinformatician
 -   Research scientist in biomedical data science
 -   Returned to Buffalo during COVID
 -   (Remote) Engineer for Precision Medicine
     -   'Science to Medicines' mission
-    -   Not a tech organization
+    -   Not a traditionally tech organization
 :::
 
 ::: {.column width="40%"}
-```{r diagrammr_timeline}
-
-DiagrammeR::mermaid(diagram = '
+```{mermaid}
+%%| fig-width: 6
+%%| fig-height: 6
 graph BT
   HS(High School)-->College("Biochemistry
                              @ University of Rochester")
@@ -37,10 +38,9 @@ graph BT
   Postbac-->PhD("Systems Biology
                  @ Columbia University")
   PhD-->Job("Precision Medicine
-             @ Regeneron")
-')
-  
+             @ Regeneron")  
 ```
+
 :::
 :::::
 
@@ -61,10 +61,25 @@ graph BT
 
 ![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2lvZXVxbHZ1aHE1YXhuNHMyaHA3ZWYxOTlqdGxlOTE4eHJuNjZlMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7btQT3dWrTI7pFZK/giphy.gif){fig-align="center"}
 
+## My tool suite of choice is Posit Team
+
+-   [Posit Team = Free software + DevOps support](https://posit.co/products/enterprise/team/)
+
+![](posit_team.png){ fig-align="center" width="1000px" height="500px"}
+
 ## Tip 1 of 4: Making your work *transparent* can be **more important** than completing assigned work
 
-::::: columns
-::: {.nonincremental .column width="60%"}
+```{mermaid}
+%%| fig-width: 8
+%%| fig-height: 5
+graph BT
+  Y(You)-->M(Managers)
+  M-->SL("Senior Leadership")
+  
+```
+
+## Tip 1 of 4: Making your work *transparent* can be **more important** than completing assigned work
+
 -   You (and your team) are assigned work including dozens of projects
 
 -   Stakeholders are consumers and producers of your work
@@ -74,69 +89,21 @@ graph BT
 -   Managers/Directors are accountable to SL
 
 -   If Managers/Directors can't communicate your work, how will SL know?
-:::
-::: {.nonincremental .column width="40%"}
-```{r diagrammr_leadership}
-
-DiagrammeR::mermaid(diagram = '
-graph BT
-  Y(You)-->M(Managers)
-  M-->SL("Senior Leadership")
-')
-  
-```
-:::
-
-:::::
 
 ##
 
 Here's an example workflow that would communicate your work to Leadership
 
-::::: columns
-::: {.center .column width="100%"}
-
-```{r reporting}
-library(visNetwork)
-
-# Define nodes (more spread out for longer arrows)
-nodes <- data.frame(
-  id = 1:3,
-  label = c(
-    "API or Persistent Database",
-    "Jira/Excel/Database or anything you can easily edit",
-    "Scheduled Report/Google Docs"
-  ),
-  shape = "box",
-  color = list(
-    background = "#F8F8FF",
-    border = "#CCCCFF",
-    highlight = list(background = "#F0F8FF", border = "#8888FF")
-  ),
-  font = list(size = 16),
-  x = c(0, -150, 150),   # Spread nodes wider apart horizontally
-  y = c(-100, 50, 50)  # Increase vertical spacing for longer edges
-)
-
-# Define edges with curved paths to preserve circular flow
-edges <- data.frame(
-  from = c(2, 1, 3),
-  to   = c(1, 3, 1),
-  arrows = "to",
-  smooth = list(enabled = TRUE, type = "curvedCW", roundness = 0.2),
-  width = 2
-)
-
-# Build network
-visNetwork(nodes, edges, width = "100%", height = "600px") %>%
-  visEdges(smooth = TRUE) %>%
-  visPhysics(enabled = FALSE) %>%
-  visNodes(borderWidth = 2, shape = "box", shadow = TRUE)
-  
+```{mermaid}
+%%| fig-width: 8
+%%| fig-height: 5
+graph BT
+  API("API")-->Data("Data (Refreshed)")
+  API-->Docs("Report")
+  Data-->Docs
+  Docs-->Data
 ```
 
-:::
-:::::
 ##
 
 Give management your book of work with summaries so that the corporate machine keeps running
@@ -245,7 +212,7 @@ pltly <-
     plotly::style(hoverlabel = list(bgcolor = "white")) |>
     plotly::layout(
       showlegend = FALSE,
-      width = 400, height = 600  
+      width = 500, height = 500  
     ) |>
     plotly::highlight(
       on = "plotly_selected", 
@@ -261,7 +228,7 @@ pltly <-
 tbl <-
   DT::datatable(
     sd,
-    width = '400px', height = '700px',
+    width = '400px', height = '400px',
     extensions = 'Scroller',
     fillContainer = TRUE,
     options = list(
@@ -276,15 +243,20 @@ tbl <-
     )
 bscols(
   pltly,
-  tbl,
-  widths = c(5,7)
+  tbl
 )
 ```
 
 
 ## Tip 3 of 4 Always compare results of your complex models to simple, known, and understood models
 
--   Ensure your data science/analytics is interpretable!
+-   Simpler, understood models almost always win
+
+-   Sometimes other models better fit the use case
+
+-   Present both and allow comparisons!
+
+-   Adoption will follow acceptance for the business use case
 
 ##
 
@@ -413,8 +385,8 @@ fold_plot + p_lm + p_brm +
 -   At a company, you have deliverables, priorities, limited resources, and timelines
 -   Leverage tools to make good use of available  resources
 -   Big companies usually have an internal LLM resource
--   Many public, paid LLM API options
--   Use them for drafts/initial start, but you are the expert!
+-   Use them for drafts/initial start, and learning
+-   Always vet the outputs and steer the direction
 -   This presentation involved 50/50 ChatGPT + me 
 
 ## Lessons from a former graduate student
@@ -432,9 +404,9 @@ fold_plot + p_lm + p_brm +
 
 nickg.bio
 
-https://www.linkedin.com/in/nickgiangreco/
+[https://www.linkedin.com/in/nickgiangreco/](https://www.linkedin.com/in/nickgiangreco/)
 
-https://github.com/ngiangre
+[https://github.com/ngiangre](https://github.com/ngiangre)
 
 nick.giangreco AT gmail.com
 
