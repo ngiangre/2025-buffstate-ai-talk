@@ -56,7 +56,7 @@ graph BT
 
 -   [Posit Team = Free software + DevOps support](https://posit.co/products/enterprise/team/)
 
-![](posit_team.png){ fig-align="center" width="1000px" height="500px"}
+![](posit_team.png){ fig-align="center" width="900px" height="400px"}
 
 ## This presentation is my perspective doing data science in industry
 
