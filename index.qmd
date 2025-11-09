@@ -44,6 +44,20 @@ graph BT
 :::
 :::::
 
+## I am both a scientist and engineer for Precision Meddicine
+
+-   I filled a gap of providing tools with fast impact
+
+-   I taught myself using online books, blogs, videos, and side projects
+
+-   When they became available, LLMs helped draft code I asked for
+
+## I use Posit Team to generate data products
+
+-   [Posit Team = Free software + DevOps support](https://posit.co/products/enterprise/team/)
+
+![](posit_team.png){ fig-align="center" width="1000px" height="500px"}
+
 ## This presentation is my perspective doing data science in industry
 
 -   I really liked academia and doing biomedical data science research
@@ -60,12 +74,6 @@ graph BT
 ## This is an N=1, results may vary, perspectives are my own
 
 ![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2lvZXVxbHZ1aHE1YXhuNHMyaHA3ZWYxOTlqdGxlOTE4eHJuNjZlMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7btQT3dWrTI7pFZK/giphy.gif){fig-align="center"}
-
-## My tool suite of choice is Posit Team
-
--   [Posit Team = Free software + DevOps support](https://posit.co/products/enterprise/team/)
-
-![](posit_team.png){ fig-align="center" width="1000px" height="500px"}
 
 ## Tip 1 of 4: Making your work *transparent* can be **more important** than completing assigned work
 
@@ -399,6 +407,10 @@ fold_plot + p_lm + p_brm +
     -   Identify your domain
     -   Learn what energizes you
     -   Find people that inspire you
+
+# 
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWQ4bzNkcjZmeGdzM3hmdDduZThsMHlxMWswb3Y1MWN2NWF2eWp5ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5xtDarEgBDjEoWo6VRS/giphy.gif)
 
 # Feel free to reach out!
 
